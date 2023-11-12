@@ -21,3 +21,9 @@ sudo chmod +x /usr/bin/apt-add-repo
 
 # install over PackageMgr
 xargs sudo apt-get -y install < software/apt_packages_basic.txt
+
+/bin/bash software/install_signal.sh
+/bin/bash software/install_sublime_text.sh
+# Virtualbox script must be upgraded to work properly:
+#/bin/bash software/install_virtualbox.sh
+
