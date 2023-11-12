@@ -1,3 +1,5 @@
+# GET
+git clone https://github.com/devd4n/linux_desktop_debian.git
 
 
 # SOFTWARE INSTALL
