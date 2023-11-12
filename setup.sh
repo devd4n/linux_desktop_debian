@@ -18,3 +18,6 @@ echo "XMODIFIERS=@im=ibus" >> /etc/environment
 sudo wget -qO /usr/bin/apt-add-repo https://raw.githubusercontent.com/devd4n/apt-add-repo/main/apt-add-repo.sh
 #make it executable
 sudo chmod +x /usr/bin/apt-add-repo
+
+# install over PackageMgr
+xargs sudo apt-get -y install < software/apt_packages_basic.txt
