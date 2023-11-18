@@ -1,6 +1,5 @@
 tcpdump
 nmap
-wireshark
 ntp
 gimp
 keepassxc
