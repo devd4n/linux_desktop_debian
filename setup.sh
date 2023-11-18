@@ -9,9 +9,9 @@ setxkbmap -print -verbose 10
 # => check status
 
 # Use ibus as input Module:
-echo "GTK_IM_MODULE=ibus" >> /etc/environment
-echo "QT_IM_MODULE=ibus" >> /etc/environment
-echo "XMODIFIERS=@im=ibus" >> /etc/environment
+echo "GTK_IM_MODULE=ibus" | sudo tee -a /etc/environment
+echo "QT_IM_MODULE=ibus" | sudo tee -a /etc/environment
+echo "XMODIFIERS=@im=ibus" | sudo tee -a /etc/environment
 
 
 #download this script to the bin folder
