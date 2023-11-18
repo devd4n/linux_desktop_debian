@@ -8,13 +8,35 @@ sudo /usr/sbin/dpkg-reconfigure keyboard-configuration
 setxkbmap -print -verbose 10
 # => check status
 
+##############################
 # Use ibus as input Module:
-echo "GTK_IM_MODULE=ibus" | sudo tee -a /etc/environment
-echo "QT_IM_MODULE=ibus" | sudo tee -a /etc/environment
-echo "XMODIFIERS=@im=ibus" | sudo tee -a /etc/environment
+##############################
+if [ $(grep -c GTK_IM_MODULE= /etc/environment) == 0 ]; then
+  echo "GTK_IM_MODULE=ibus" | sudo tee -a /etc/environment
+else
+  sed -i 's/GTK_IM_MODULE=.*/GTK_IM_MODULE=ibus/g' filename
+fi
+
+if [ $(grep -c QT_IM_MODULE= /etc/environment) == 0 ]; then
+  echo "QT_IM_MODULE=ibus" | sudo tee -a /etc/environment
+else
+  sudo sed -i 's/QT_IM_MODULE=.*/QT_IM_MODULE=ibus/g' /etc/environment
+fi
+
+if [ $(grep -c QT_IM_MODULE= /etc/environment) == 0 ]; then
+  echo "QT_IM_MODULE=ibus" | sudo tee -a /etc/environment
+else
+  sudo sed -i 's/QT_IM_MODULE=.*/QT_IM_MODULE=ibus/g' /etc/environment
+fi
+
+if [ $(grep -c XMODIFIERS=@im=ibus /etc/environment) == 0 ]; then
+  echo "XMODIFIERS=@im=ibus" | sudo tee -a /etc/environment
+else
+  sudo sed -i 's/XMODIFIERS=.*/XMODIFIERS=@im=ibus/g' /etc/environment
+fi
 
 
-#download this script to the bin folder
+# download apt-add-repo script to the bin folder
 sudo wget -qO /usr/bin/apt-add-repo https://raw.githubusercontent.com/devd4n/apt-add-repo/main/apt-add-repo.sh
 #make it executable
 sudo chmod +x /usr/bin/apt-add-repo
