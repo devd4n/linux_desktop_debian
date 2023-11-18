@@ -1,3 +1,7 @@
+# Virtualbox Requirements
+Graphic memory > 32MB
+Network Interfaces correctly setup
+
 # Pre Setup
 su root
 echo ' usr_admin_install ALL=(ALL)   ALL' >> /etc/sudoers
