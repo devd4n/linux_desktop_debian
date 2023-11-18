@@ -1,3 +1,10 @@
+# Pre Setup
+su root
+echo ' usr_admin_install ALL=(ALL)   ALL' >> /etc/sudoers
+usermod -aG sudo usr_admin_install
+exit
+- relogon
+
 # GET
 git clone https://github.com/devd4n/linux_desktop_debian.git
 
